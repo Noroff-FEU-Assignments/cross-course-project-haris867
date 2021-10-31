@@ -69,6 +69,10 @@ nav a {
   display: block;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
 #hamburger-menu {
   display: none;
 }
