@@ -5,37 +5,85 @@
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
     <meta name="description" content="This is the home page for RainyDays" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b5e57b6385.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
+    <header class="myheader">
       <div class="logo">
-        <a href="index.html" class="logo"
-          ><img src="images/RainyDays_editedLogo.png" alt="RainyDays logo"
+        <a href="index.html"
+          ><img
+            src="images/RainyDays_editedLogo.png"
+            alt="RainyDays logo"
+            class="logo"
         /></a>
       </div>
-      <label for="hamburger-menu">Hamburger</label>
-      <input type="checkbox" id="hamburger-menu" />
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Products</li>
-          <li>Contact</li>
-          <li>About Us</li>
-        </ul>
-      </nav>
+      <div></div>
+      <div>
+        <label for="hamburger-menu" class="hamburger-icon"
+          ><i class="fas fa-bars"></i
+        ></label>
+        <input type="checkbox" id="hamburger-menu" />
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html" class="active">Home</a>
+            </li>
+            <li>
+              <a href="products.html">Products</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main class="home">
-      <h1>
-        Explore our wide <br />
-        selection of jackets.
-      </h1>
-      <p>
-        For RainyDays. <br />
-        By RainyDays.
-      </p>
-      <a href="products.html" class="cta">Explore</a>
+      <div class="home-content">
+        <div class="home-top">
+          <div>
+            <h1>
+              Explore our wide <br />
+              selection of jackets.
+            </h1>
+            <p>
+              For RainyDays. <br />
+              By RainyDays.
+            </p>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="home-mid">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div class="home-bottom">
+          <div></div>
+          <div class="cta-button">
+            <a href="products.html" class="cta">Explore</a>
+          </div>
+          <a href="contact.html" class="icon"
+            ><i class="fas fa-comment-alt"></i
+          ></a>
+        </div>
+      </div>
     </main>
 
-    <footer>Copyrigth &copy;</footer>
+    <footer></footer>
   </body>
 </html>
