@@ -11,10 +11,10 @@ a img {
 
 body {
   color: #ffffff;
-  margin: 1px;
-  padding: 1px;
+  margin: 0px;
+  padding: 0px;
   min-height: 100vh;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .home-content {
@@ -69,10 +69,6 @@ nav a {
   display: block;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
 #hamburger-menu {
   display: none;
 }
@@ -99,6 +95,7 @@ h1 {
   left: 4%;
   top: 13%;
   margin-bottom: 0%;
+  text-shadow: 1px 1px #e8a12e;
 }
 
 p {
@@ -107,6 +104,7 @@ p {
   left: 4%;
   top: 23%;
   margin: 0;
+  text-shadow: 1px 1px #e8a12e;
 }
 
 .cta {
@@ -132,14 +130,10 @@ p {
   right: 30px;
 }
 
-footer {
-  color: black;
-}
-
 @media (min-width: 800px) {
   .logo {
     float: left;
-    height: 120px;
+    height: 110px;
   }
 
   .hamburger-icon {
@@ -168,7 +162,7 @@ footer {
   }
 
   .myheader {
-    min-height: 20vh;
+    min-height: 17vh;
     position: relative;
   }
 
@@ -200,5 +194,8 @@ footer {
   .fa-search {
     position: absolute;
     top: 56%;
+  }
+  .cta-button:hover {
+    font-weight: bold;
   }
 }
