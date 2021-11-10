@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="contact-body">
     <div class="nav-container">
       <header class="myheader">
         <div class="logo">
@@ -55,23 +55,37 @@
       </header>
     </div>
 
-    <main>
-      <h1>Contact</h1>
-      <div>
-        <a href="#"><i class="fas fa-phone-alt"></i>22 12 34 56</a>
+    <main class="main-contact">
+      <div class="contact-content">
+        <h1>Contact</h1>
+      
+      <div class="contact-phone">
+        <a href="#"><i class="fas fa-phone-alt"></i></a>
+        <a href="#" id="contact-phonenumber">22 12 34 56</a>
       </div>
-      <div>
-        <a href="#"><i class="fas fa-comment-alt"></i></a>
-        <a href="#">Start chat</a>
+      <div class="contact-chat">
+        <a href="#"><i class="fas fa-comment-alt" id="contact-chat"></i></a>
+        <a href="#" class="chat-text">Start chat</a>
       </div>
-      <div>
-        <a href="#"><i class="fas fa-envelope"></i>Write to us!</a>
+      <div class="contact-mail">
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#" id="contact-mail">Write to us!</a>
         <textarea" id="message" name="message" rows="3" cols="30"> </textarea>
+      </div>
       </div>
     </main>
 
     <footer>
-      <div></div>
+      <div class="checkedout-footer">
+        <h3>Give us a follow or ask us about anything!</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-snapchat"></i></a>
+          <a href="contact.html"><i class="fas fa-comment-alt"></i></a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

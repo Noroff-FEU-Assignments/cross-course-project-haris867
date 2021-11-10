@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="checkedout-body">
     <div class="nav-container">
       <header class="myheader">
         <div class="logo">
@@ -55,28 +55,37 @@
       </header>
     </div>
 
-    <main>
-      <h1>Checkout Confirmation</h1>
-      <p>Order-ID: 1a2b3c4</p>
+    <main class="main-checkedout">
+      <div class="checkedout-content">
+        <h1>Checkout Confirmation</h1>
+        <p id="order-id">Order-ID: 1a2b3c4</p>
+        <div class="checkedout-icon">
+          <i class="far fa-check-circle"></i>
+        </div>
 
-      <h2>Thank you for your purchase!</h2>
-      <h3>Now sit back and relax.</h3>
-      <h3>Nature awaits.</h3>
-      <p>
-        We’ve already sent a confirmation to your e-mail with a tracking link,
-        so you can keep tabs on your order while you wait.
-      </p>
-      <h3>Give us a follow or ask us about anything!</h3>
-
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-snapchat"></i></a>
-      <a href="contact.html" class="icon"><i class="fas fa-comment-alt"></i></a>
+        <div class="checkedout-content__text">
+          <h2>Thank you for your purchase!</h2>
+          <h3>Now sit back and relax.</h3>
+          <h3 id="checkedout__second-h3">Nature awaits.</h3>
+          <p id="confirmation-email">
+            We’ve already sent a confirmation to your e-mail with a tracking
+            link, so you can keep tabs on your order while you wait.
+          </p>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <div></div>
+      <div class="checkedout-footer">
+        <h3>Give us a follow or ask us about anything!</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-snapchat"></i></a>
+          <a href="contact.html"><i class="fas fa-comment-alt"></i></a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
