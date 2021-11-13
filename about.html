@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RainyDays | Home</title>
+    <title>RainyDays | About Us</title>
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
-    <meta name="description" content="This is the home page for RainyDays" />
+    <meta
+      name="description"
+      content="This is the About us page for RainyDays"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script
       src="https://kit.fontawesome.com/b5e57b6385.js"
@@ -16,7 +19,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="about-body">
     <div class="nav-container">
       <header class="myheader">
         <div class="logo">
@@ -48,20 +51,56 @@
               </li>
             </ul>
           </nav>
-          <div>
-            <i class="fas fa-search"></i>
+          <div class="search-icon">
+            <a href="search.html"><i class="fas fa-search"></i></a>
           </div>
         </div>
       </header>
     </div>
 
-    <main>
-      <h1>Wanna get to know us?</h1>
-      <h1>Let us get to know you!</h1>
+    <main class="main-about">
+      <div class="about-content">
+        <h1>About Us</h1>
+        <hr />
+        <div class="know-us">
+          <h2>Wanna get to know us?</h2>
+          <img
+            src="images/kamil-kalbarczyk-lY11p3yNVxE-unsplash.jpg"
+            alt="Photo of person in a boat wearing yellow jacket"
+          />
+          <h3>Become one with nature - with us.</h3>
+          <p>
+            Our goal is to enable and urge more people to pursue their passion
+            of being in the great outdoors, without having to feel like they
+            don’t belong because of various weather conditions.
+          </p>
+        </div>
+        <div class="know-you">
+          <h2>Let us get to know you!</h2>
+          <input
+            type="text"
+            name="contact-us"
+            placeholder="Write to us, about us!"
+          />
+
+          <div class="about-cta-container">
+            <a href="about.html" class="about-cta"> Submit </a>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <div></div>
+      <div class="checkedout-footer">
+        <h3>Leave a review or ask us about anything!</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-snapchat"></i></a>
+          <a href="contact.html"><i class="fas fa-comment-alt"></i></a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
