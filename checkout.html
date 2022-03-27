@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RainyDays | Checkout</title>
+    <title>RainyDays | Favourites</title>
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
-    <meta name="description" content="This is the RainyDays checkout page for Black 2.0" />
+    <meta
+      name="description"
+      content="This is the products page for RainyDays"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script
       src="https://kit.fontawesome.com/b5e57b6385.js"
@@ -16,19 +19,24 @@
       rel="stylesheet"
     />
     <!-- Hotjar Tracking Code for https://suspicious-wing-9f385e.netlify.app/ -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2888245,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2888245, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
-  <body class="checkout-body">
-            <div class="nav-container">
+<body class="checkout-body">
+      <div class="nav-container">
       <header class="myheader">
         <div class="logo">
           <a href="index.html"
@@ -62,7 +70,7 @@
         </div>
         <div class="header-icons">
           <div class="cart-icon">
-            <a href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+            <i class="fas fa-shopping-cart"></i>
           </div>
           <div class="search-icon">
             <a href="search.html"><i class="fas fa-search"></i></a>
@@ -76,22 +84,14 @@
         <h1>Checkout</h1>
 
         <div class="checkout-summary">
-            <h2>Item</h2>
-            <h2>Price</h2>
-            <hr>
-            <a href="black.html">
-<img src="images/Product shot.png" alt="Product photo black jacket">
-            </a>
-        
-        <p>Black <b>2.0</b></p>
-        <p>M</p>
-        <p>kr. 999,-</p>
-    </div>
-    <hr>
-        <div class="subtotal">
+          <h2>Item</h2>
+          <h2>Price</h2>
+          <hr>
+        </div>
+         <div class="subtotal">
     
             <p>Subtotal:</p>
-            <p>kr. 999,-</p>
+            <p>kr. <span class="subtotal__price">0</span>,-</p>
         </div>
         <div class="continue-shopping">
             <a href="products.html">Continue shopping</a>
@@ -138,14 +138,16 @@
           </form>
 
 
-        </fieldset>s
+        </fieldset>
+
+
+
         
     </main>
 
     <footer>
       
     </footer>
-    <script src="checkout.html"></script>
-    <script src="js/script.js"></script>
+    <script src="js/checkout.js"></script>
   </body>
 </html>

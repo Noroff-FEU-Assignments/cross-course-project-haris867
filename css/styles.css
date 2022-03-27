@@ -37,29 +37,27 @@ body {
 }
 
 .hamburger-icon {
-  color: var(--primary-color);
-  padding: 10px;
-  padding-top: 8px;
-  display: block;
-  font-size: 1.5em;
   position: absolute;
-  right: 7%;
-  top: 3%;
-  z-index: 2;
+  top: 35px;
+  right: 90px;
+  font-size: 1.5em;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin: auto 10px;
 }
 
 nav {
   color: var(--primary-color);
   display: none;
-  position: relative;
-  right: 0%;
-  font-size: 1.2em;
+  position: absolute;
+  right: 0px;
+  z-index: 1000;
 }
 
 nav ul {
   padding: 80px 0px 0px 0px;
   z-index: 1;
-  margin-top: 20.2px;
+  margin-top: 20px;
 }
 
 nav li {
@@ -90,13 +88,69 @@ nav a:hover {
   font-weight: bold;
 }
 
+.header-icons {
+  margin: auto 10px;
+  display: flex;
+  gap: 5px;
+}
+
 .fa-search {
   color: var(--primary-color);
-  font-size: 1.2em;
-  position: absolute;
-  top: 4.7%;
-  right: 2%;
+  font-size: 1.5em;
   margin-top: 2px;
+}
+
+.cart-icon {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.cart-icon a {
+  color: #e8a12e;
+}
+
+.cart-container {
+  color: white;
+}
+
+.checkout-link {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.cart-link-container {
+  text-align: center;
+}
+
+.cart-link {
+  margin: 0 auto;
+  color: white;
+  background-color: #e8a12e;
+  border: none;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 5px;
+  right: 25%;
+}
+
+.cart-total {
+  margin: 5px;
+  font-size: 0.6em;
+}
+
+.cart-total-sum {
+  position: absolute;
+  right: 5px;
+}
+
+.search-icon {
+  margin: auto 10px;
 }
 
 h1 {
@@ -284,6 +338,39 @@ p {
   text-decoration: none;
 }
 
+.product-buy {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 50px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.buy-button {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-button {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.product-cart {
+  background-color: white;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 5px 27px;
+  border-radius: 30px;
+  border: solid 1px var(--primary-color);
+  margin-top: 5px;
+  cursor: pointer;
+}
+
 /* Black product page */
 
 .main-black {
@@ -432,7 +519,6 @@ h3 {
   justify-content: space-between;
   flex-wrap: wrap;
   max-width: 300px;
-  max-height: 120px;
   margin: 0 auto;
   align-items: center;
 }
@@ -467,7 +553,7 @@ h3 {
 .subtotal p {
   position: static;
   color: black;
-  opacity: 80%;
+  opacity: 70%;
 }
 
 .continue-shopping {
@@ -506,9 +592,6 @@ legend {
 
 .checkout-cta {
   text-align: center;
-}
-
-.checkout-cta a {
   background-color: var(--primary-color);
   color: #fff;
   text-decoration: none;
@@ -516,6 +599,38 @@ legend {
   padding: 10px 70px;
   border-radius: 30px;
   position: relative;
+  border: none;
+  margin-top: 5px;
+}
+
+/* Checkout page */
+
+.checkout-container {
+  color: #e8a12e;
+  margin-top: 100px;
+}
+
+.empty-cart {
+  margin: 2px auto 10px auto;
+}
+
+#remove-item {
+  color: red;
+  display: block;
+}
+.error-message {
+  color: red;
+  font-size: 0.6em;
+  display: none;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.success-message {
+  color: #e8a12e;
 }
 
 /* Checkout success page */
@@ -775,6 +890,14 @@ legend {
   height: 70px;
   margin-bottom: 10px;
 }
+.email-input__contact {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.message-textbox form {
+  flex-direction: column;
+}
 
 .message-button {
   padding: 10px 70px;
@@ -890,10 +1013,6 @@ form {
 
   .image-container {
     max-width: 250px;
-  }
-
-  .product-text p {
-    font-size: 1.2em;
   }
 
   .textbox h2 {
@@ -1035,39 +1154,42 @@ form {
 }
 
 @media (min-width: 800px) {
-  .logo {
-    height: 110px;
-  }
-
   .hamburger-icon {
     display: none;
   }
 
   ul {
     display: flex;
+    justify-content: center;
+    gap: 15%;
   }
 
   nav ul {
     padding: 0px;
     margin-top: 4px;
+    margin-left: 15%;
   }
 
   li {
     display: inline-block;
   }
 
-  .nav-container {
+  /* .nav-container {
     width: 100%;
     overflow: hidden;
-  }
+  } */
 
   nav {
     display: inline-block;
-    width: 100%;
+    position: absolute;
+    top: 25px;
+    left: 29%;
+    font-size: 1.4em;
+    right: 26%;
   }
 
   nav li {
-    display: block;
+    display: inline-block;
     background-color: unset;
   }
 
@@ -1077,7 +1199,6 @@ form {
   }
 
   nav a {
-    padding: 25% 100px;
     color: var(--primary-color);
   }
   .home-content {
@@ -1106,11 +1227,6 @@ form {
     bottom: 100px;
   }
 
-  .fa-search {
-    position: absolute;
-    top: 56%;
-  }
-
   .search-content {
     background-image: url(../images/kamil-kalbarczyk-lY11p3yNVxE-unsplash.jpg);
   }
@@ -1128,11 +1244,9 @@ form {
 
   .main-products h1 {
     left: 100px;
-    top: 140px;
   }
 
   .main-products p {
-    top: 185px;
     left: 100px;
   }
 

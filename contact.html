@@ -60,10 +60,15 @@
                 <a href="contact.html" class="active">Contact</a>
               </li>
               <li>
-                <a href="about.html">About Us</a>
+                <a href="about.html">About</a>
               </li>
             </ul>
           </nav>
+        </div>
+        <div class="header-icons">
+          <div class="cart-icon">
+            <a href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+          </div>
           <div class="search-icon">
             <a href="search.html"><i class="fas fa-search"></i></a>
           </div>
@@ -94,10 +99,26 @@
           <div class="message-textbox">
             <form action="#" method="post">
               <div>
-                <input type="text" name="message" class="message-field" />
+                <label>
+                  <span class="error-message email-error"
+                    >Please enter your e-mail address</span
+                  >
+                  <input
+                    class="email-input__contact"
+                    type="email"
+                    name="email"
+                    placeholder="E-mail address"
+                  />
+                </label>
+                <input
+                  placeholder="Write to us!"
+                  type="text"
+                  name="message"
+                  class="message-field"
+                />
               </div>
+              <button class="message-button">Submit</button>
             </form>
-            <input type="submit" value="Submit" class="message-button" />
           </div>
         </div>
       </div>
@@ -115,5 +136,6 @@
         </div>
       </div>
     </footer>
+    <script src="checkout.html"></script>
   </body>
 </html>
