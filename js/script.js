@@ -67,3 +67,120 @@ cartIcon.onclick = function () {
     cart.style.display = "none";
   }
 };
+
+// API call
+
+const url = "http://haris13.site/RainyDays/wp-json/wc/store/products";
+const productsContainer = document.querySelector(".featured");
+
+async function getProducts(url) {
+  const response = await fetch(url);
+  const products = await response.json();
+  products.forEach(function (product) {
+    productsContainer.innerHTML += `<div class="featured-product" data-id="${product.id}">
+                                      <a href="productpage.html?id=${product.id}">
+                                      <img src="${product.images[0].src}" alt="Photo of person wearing ${product.name}">
+                                      <div class="product-text">
+                                      <p class="product-text__name"><b>${product.name}</b></p>
+                                      <p class="product-text__price">kr. ${product.prices.price},-</p>
+                                      </div>
+                                      </a>
+                                      <div class="featured-buttons">
+                                      <div class="buy-button">
+                                      <a href="black.html"><button class="product-buy">Buy</button></a>
+                                      </div>
+
+                                      <div class="cart-button">
+                                      <button class="product-cart">Add to cart</button>
+                                      </div>
+                                      </div>
+                                      </div>`;
+  });
+}
+
+try {
+  getProducts(url);
+} catch (error) {
+  productsContainer.innerHTML = "An error has occurred";
+}
+
+// Search function
+
+const searchButton = document.querySelector("#search-btn");
+const searchInput = document.querySelector("#search-input");
+
+searchButton.onclick = function () {
+  console.log(searchInput);
+
+  const searchUrl = url + `?search=${searchInput.value}`;
+  productsContainer.innerHTML = "";
+  getProducts(searchUrl);
+};
+
+searchInput.onkeyup = function (event) {
+  console.log(event);
+  if (event.keyCode === 13) {
+    searchButton.click();
+  }
+};
+
+// Category filters
+
+const categories = document.querySelectorAll(".radio-buttons");
+
+categories.forEach(function (category) {
+  category.onclick = function (event) {
+    let newUrl;
+    const category = event.target.value;
+    newUrl = url + `?category=${category}`;
+    productsContainer.innerHTML = "";
+    getProducts(newUrl);
+  };
+});
+
+// Sort by price
+
+const sorter = document.querySelector(".dropdown select");
+const sortedUrl = url + `?orderby=price`;
+
+console.log(sortedUrl);
+
+async function getSortedData(url) {
+  const result = await fetch(url);
+  const data = await result.json();
+  const reversedArray = data.reverse();
+
+  function sortByLowest() {
+    reversedArray.forEach(function (product) {
+      productsContainer.innerHTML += `<div class="featured-product" data-id="${product.id}">
+                                      <a href="productpage.html?id=${product.id}">
+                                      <img src="${product.images[0].src}" alt="Photo of person wearing ${product.name}">
+                                      <div class="product-text">
+                                      <p class="product-text__name"><b>${product.name}</b></p>
+                                      <p class="product-text__price">kr. ${product.prices.price},-</p>
+                                      </div>
+                                      </a>
+                                      <div class="featured-buttons">
+                                      <div class="buy-button">
+                                      <a href="black.html"><button class="product-buy">Buy</button></a>
+                                      </div>
+
+                                      <div class="cart-button">
+                                      <button class="product-cart">Add to cart</button>
+                                      </div>
+                                      </div>
+                                      </div>`;
+    });
+  }
+  sortByLowest();
+}
+
+sorter.onchange = function (event) {
+  if (event.target.value === "Price - high to low") {
+    productsContainer.innerHTML = "";
+    getProducts(sortedUrl);
+  } else if (event.target.value === "Price - low to high") {
+    productsContainer.innerHTML = "";
+    getSortedData(sortedUrl);
+  }
+};

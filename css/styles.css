@@ -255,7 +255,7 @@ hr {
 
 .search-field {
   margin-bottom: 10px;
-  padding: 10px 80px;
+  /* padding: 10px 80px; */
   border-radius: 20px;
 }
 
@@ -276,13 +276,67 @@ hr {
 
 .main-products img {
   width: 100%;
+  height: 64%;
+}
+
+.search-div {
+  padding-top: 80px;
+  /* text-align: left; */
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.search-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-div input {
+  max-width: 180px;
+  height: 20px;
+  border: solid 1px #e8a12e;
+}
+
+.search-div button {
+  background-color: #fff;
+  color: #e8a12e;
+  border: solid 1px #e8a12e;
+  border-radius: 30px;
+  font-size: 0.9em;
+  padding: 2px 15px;
+}
+
+.sorting-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown select {
+  max-width: 80px;
+  background-color: white;
+  color: #e8a12e;
+  border: solid 1px #e8a12e;
+}
+
+.radio-buttons label {
+  color: #e8a12e;
+}
+
+.radio-buttons {
+  display: flex;
+}
+
+.radio-buttons input {
+  accent-color: #e8a12e;
+  margin-left: 0px;
+  margin-right: 8px;
 }
 
 .featured {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  padding-top: 80px;
+  padding-top: 10px;
 }
 
 .featured-product {
@@ -629,6 +683,10 @@ legend {
   flex-direction: column;
 }
 
+.checkout-form input {
+  border: solid 1px #e8a12e;
+}
+
 .success-message {
   color: #e8a12e;
 }
@@ -958,7 +1016,7 @@ form {
 
 @media (min-width: 600px) {
   .main-products {
-    max-width: 470px;
+    max-width: 510px;
     padding-top: 15px;
   }
 
@@ -990,11 +1048,30 @@ form {
     margin: 15px 0;
   }
 
+  .search-div input {
+    height: 25px;
+    max-width: 184px;
+  }
+
+  .search-field {
+    justify-content: start;
+    gap: 10px;
+  }
+
+  .search-div button {
+    padding: 5px 20px;
+  }
+
+  .dropdown select {
+    max-width: 100px;
+  }
+
   .featured {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding-top: 80px;
+    /* padding-top: 80px; */
+    padding-top: 25px;
   }
 
   .featured-product {
@@ -1230,9 +1307,9 @@ form {
     background-image: url(../images/kamil-kalbarczyk-lY11p3yNVxE-unsplash.jpg);
   }
 
-  .search-field {
+  /* .search-field {
     padding: 10px 100px;
-  }
+  } */
   .cta-button:hover {
     font-weight: bold;
   }
@@ -1253,7 +1330,8 @@ form {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    padding-top: 80px;
+    /* padding-top: 80px; */
+    padding-top: 25px;
     margin-top: 10px;
     gap: 40px;
   }
