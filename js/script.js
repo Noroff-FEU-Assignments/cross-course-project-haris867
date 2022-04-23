@@ -70,7 +70,7 @@ cartIcon.onclick = function () {
 
 // API call
 
-const url = "http://haris13.site/RainyDays/wp-json/wc/store/products";
+const url = "https://haris13.site/RainyDays/wp-json/wc/store/products";
 const productsContainer = document.querySelector(".featured");
 
 async function getProducts(url) {
