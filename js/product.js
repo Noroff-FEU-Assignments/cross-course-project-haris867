@@ -19,7 +19,7 @@ async function getProduct(url) {
                                 </div>
                                 </div>
                                 <div class="buynow-cta">
-                                <a href="checkoutyellow.html"> Buy now</a>
+                                <a href="checkout.html" data-test="test13"> Buy now</a>
                                 <p class="buynow-cta__text">Free shipping</p>
                                 </div>
 
@@ -28,5 +28,6 @@ async function getProduct(url) {
                                     ${product.description}
                                     ${product.short_description}
                                 </section>`;
+  console.log(buynow - cta.dataset.test);
 }
 getProduct(url);

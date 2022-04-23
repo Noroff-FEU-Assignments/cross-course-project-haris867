@@ -594,8 +594,11 @@ h3 {
 }
 
 .checkout-summary img {
-  max-height: 50px;
-  border: 1px solid var(--primary-color);
+  max-height: 57px;
+  min-height: 57px;
+  max-width: 37px;
+  min-width: 37px;
+  border: 1px solid #e8a12e;
   padding: 0;
 }
 

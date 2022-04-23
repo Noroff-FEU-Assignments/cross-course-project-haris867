@@ -6,6 +6,7 @@ const productsContainer = document.querySelector(".featured");
 async function getProducts(url) {
   const response = await fetch(url);
   const products = await response.json();
+  console.log(products);
   products.forEach(function (product) {
     productsContainer.innerHTML += `<div class="featured-product" data-id="${product.id}">
                                       <a href="productpage.html?id=${product.id}">
@@ -17,15 +18,17 @@ async function getProducts(url) {
                                       </a>
                                       <div class="featured-buttons">
                                       <div class="buy-button">
-                                      <a href="black.html"><button class="product-buy">Buy</button></a>
+                                      <a href="productpage.html?id=${product.id}"><button class="product-buy">Buy</button></a>
                                       </div>
 
                                       <div class="cart-button">
-                                      <button class="product-cart">Add to cart</button>
+                                      <button class="product-cart" data-image="${product.images[0].src}" data-name="${product.name}" data-price="${product.prices.price}" data-id="${product.id}">Add to cart</button>
                                       </div>
                                       </div>
                                       </div>`;
   });
+
+  // Cart function
   const cartButton = document.querySelectorAll(".cart-button button");
   const featured = document.querySelectorAll(".featured-product");
   const cartButtonDiv = document.querySelectorAll(".product-cart");
@@ -41,6 +44,11 @@ async function getProducts(url) {
   });
 
   function handleClick() {
+    const name = this.dataset.name;
+    const image = this.dataset.image;
+    const price = this.dataset.price;
+    const id = this.dataset.id;
+
     if (this.innerHTML === "Add to cart") {
       this.innerHTML = "Added to cart";
       this.style.padding = "5px 19px";
@@ -49,27 +57,27 @@ async function getProducts(url) {
       this.style.padding = "5px 27px";
     }
 
-    const id = this.parentElement.parentElement.parentElement.dataset.id;
+    const currentProduct = getAddedProducts();
 
-    const currentCart = getAddedProducts();
-
-    const alreadyAdded = currentCart.find(function (add) {
-      return add.id === id;
+    const ItemExists = currentProduct.find(function (added) {
+      if (added.id === id) {
+        return added.id === id;
+      }
     });
 
-    const newCart = currentCart.filter((fav) => fav.id !== id);
-
-    if (!alreadyAdded) {
-      const thisProduct = { id };
-
-      currentCart.push(thisProduct);
-
-      addToCart(currentCart);
+    if (ItemExists === undefined) {
+      const product = {
+        name: name,
+        image: image,
+        price: price,
+        id: id,
+      };
+      currentProduct.push(product);
+      addToCart(currentProduct);
     } else {
-      addToCart(newCart);
+      const newFavs = currentProduct.filter((added) => added.id !== id);
+      addToCart(newFavs);
     }
-
-    this.classList.toggle = "added";
   }
 
   function getAddedProducts() {
@@ -88,13 +96,22 @@ async function getProducts(url) {
     localStorage.setItem("added", JSON.stringify(added));
   }
 
-  cartIcon.onclick = function () {
-    if (cart.style.display === "none") {
-      cart.style.display = "block";
-    } else {
-      cart.style.display = "none";
-    }
-  };
+  // function handleClick() {
+
+  //   const id = this.parentElement.parentElement.parentElement.dataset.id;
+
+  //   const currentCart = getAddedProducts();
+
+  //   this.classList.toggle = "added";
+  // }
+
+  // cartIcon.onclick = function () {
+  //   if (cart.style.display === "none") {
+  //     cart.style.display = "block";
+  //   } else {
+  //     cart.style.display = "none";
+  //   }
+  // };
 }
 
 try {

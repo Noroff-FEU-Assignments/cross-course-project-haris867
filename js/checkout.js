@@ -12,6 +12,8 @@ function getAddedProducts() {
   console.log(added);
 }
 
+getAddedProducts();
+
 const products = getAddedProducts();
 
 console.log(products);
@@ -21,32 +23,15 @@ if (products.length === 0) {
 }
 
 products.forEach((product) => {
-  if (product.id % 2 === 0) {
-    const price = Number(999);
-    checkoutContainer.innerHTML += `
-                                    <a href="yellow.html">
-                                    <img src="images/Product shot yellow.png" alt="Product photo yellow jacket">
+  checkoutContainer.innerHTML += `<a href="productpage.html?id=${product.id}">
+                                    <img src="${product.image}" alt="Product photo ${product.name}">
                                     </a>
         
-                                    <p>Yellow <b>1.0</b></p>
-                                    <p>kr. ${price},-</p>
-
-                                    
-                                    <hr>
-                                    `;
-  } else {
-    const price = Number(999);
-    checkoutContainer.innerHTML += `<a href="black.html">
-                                    <img src="images/Product shot.png" alt="Product photo black jacket">
-                                    </a>
-        
-                                    <p>Black <b>2.0</b></p>
-                                    <p>kr. ${price},-</p>
-                                    
+                                    <p>${product.name}</p>
+                                    <p>kr. ${product.price},-</p>
 
                                     
                                     <hr>`;
-  }
 });
 
 const totalPrice = document.querySelector(".subtotal__price");
