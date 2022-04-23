@@ -3,7 +3,7 @@ const parameters = new URLSearchParams(queryString);
 const id = parameters.get("id");
 const productContainer = document.querySelector(".product-container");
 
-const url = "http://haris13.site/RainyDays/wp-json/wc/store/products/" + id;
+const url = "https://haris13.site/RainyDays/wp-json/wc/store/products/" + id;
 
 async function getProduct(url) {
   const response = await fetch(url);
